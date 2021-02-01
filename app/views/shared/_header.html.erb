@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <div class="field form-inline my-2 my-lg-0 ml-md-auto">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+  </div>
+  <ul class="navbar-nav mr-auto">
+  </ul>
+
+  <% if user_signed_in? %>
+    <%= link_to destroy_user_session_path, method: :delete do %>
+      <button type="button" class="btn btn-primary">ログアウト</button>
+    <% end %>
+    <span class="material-icons">
+      circle_notifications
+    </span>
+    <% if current_user.profile_image? %>
+      <%= image_tag current_user.profile_image.url, :class => 'header_profile_image'%>
+    <% else %>
+      <%= image_tag "/assets/default_profile_image.png", :class => "header_profile_image"%>
+    <% end %>
+  <% else %>
+    <%= link_to new_user_session_path do %>
+      <button type="button" class="btn btn-primary">ログイン</button>
+    <% end %>
+  <% end %>
+
+</nav>
+
+
+
+
+
+

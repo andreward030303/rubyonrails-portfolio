@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+
+.header_profile_image{
+  width:40px;
+  height:40px;
+  object-fit:cover;
+  border-radius:50%;
+  margin-top: 8px;
+  margin-bottom: 7px;
+}
